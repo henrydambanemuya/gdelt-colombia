@@ -49,10 +49,14 @@ def goldsteinScatter(dataframe, events, goldstein):
         else:
             colors.append('b')
             
+    ind = np.arange(-10, 11, 1)
+           
     fig, ax = plt.subplots(figsize= (18, 8))
     ax.set_title('', fontsize=15, fontweight='bold')
     plt.scatter(event_goldstein,event_frequency, c=colors, s=120)
-    ax.set_xticks(np.arange(-10, 11, 1))
+    plt.axhline(y=1000, color='k', linestyle='--')
+    plt.axvline(x=0, color='k', linestyle='--')
+    ax.set_xticks(ind)
     ax.set_yscale('log')
     ax.set_xlabel('Goldstein Scale', fontsize=18)
     ax.set_ylabel('Frequency' , fontsize=18)
